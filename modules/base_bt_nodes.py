@@ -248,10 +248,6 @@ class SyncCondition(Node):
 # Load additional configuration and import decision-making class dynamically
 import importlib
 from modules.utils import config
-decision_making_module_path = config['decision_making']['plugin']
-module_path, class_name = decision_making_module_path.rsplit('.', 1)
-decision_making_module = importlib.import_module(module_path)
-decision_making_class = getattr(decision_making_module, class_name)
 
 # Local Sensing node
 class LocalSensingNode(SyncAction):

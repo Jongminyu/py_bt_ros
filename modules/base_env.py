@@ -3,7 +3,6 @@ os.environ['SDL_VIDEO_WINDOW_POS'] = "0,30"  # top-left corner
 import pygame
 import importlib
 from modules.utils import pre_render_text, ResultSaver
-from modules.tacview_interface.tacview_interface import TacViewInterface
 
 class BaseEnv:
     def __init__(self, config):
@@ -42,12 +41,6 @@ class BaseEnv:
             self.screen = pygame.display.set_mode((self.screen_width, self.screen_height), pygame.RESIZABLE)
             
             self.background_color = (224, 224, 224)
-
-            # Set logo and title
-            logo_image_path = 'assets/logo.jpg'  # Change to the path of your logo image
-            logo = pygame.image.load(logo_image_path)
-            pygame.display.set_icon(logo)
-            pygame.display.set_caption('SPACE(Swarm Planning And Control Evaluation) Simulator')  # Change to your desired game title
 
         else:
             self.screen = None
