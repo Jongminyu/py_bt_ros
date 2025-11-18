@@ -16,7 +16,7 @@ rviz에서 + 버튼 , set goal , tool properties , topic name '/bt/goal_pose' �
 
 # 카메라 서버 실행 
 ```
-cd final code 
+
 cd py_bt_ros
 python3 camera_server.py
 
