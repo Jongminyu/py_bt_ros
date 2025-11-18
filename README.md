@@ -1,37 +1,37 @@
 # py_bt_ros
 
-A minimal example showing how to use the Behaviour Tree runtime with ROS 2 through a turtlesim scenario.
+### ros2 HW3 
 
-
-### Simple Example (Turtlesim Navigation)
-
-Launch Turtlesim
+# webot 실행 
 ```
-ros2 run turtlesim turtlesim_node
-```
-
-Spawn a Target Turtle
-```
-ros2 service call /spawn turtlesim/srv/Spawn "{x: 5.5, y: 5.5, theta: 0.0, name: 'turtle_target'}"
+cd webots_ros2_ws
+source install/local_setup.bash
+ros2 launch webots_ros2_turtlebot robot_launch.py nav:=true
 ```
 
-Teleoperate the Target Turtle
+# 2D goal pose 버튼 생성 
 ```
-ros2 run turtlesim turtle_teleop_key --ros-args -r /turtle1/cmd_vel:=/turtle_target/cmd_vel
-```
-
-Move the spawned turtle using keyboard input
-(The original turtle /turtle1 will be controlled by Behaviour Tree)
-
-
-Run Turtle1 Action Server
-```
-python3 scenarios/example_turtlesim/turtle_nav_action_server.py --ns /turtle1
+rviz에서 + 버튼 , set goal , tool properties , topic name '/bt/goal_pose' 수정 
 ```
 
-Run Behaviour Tree Controller
+# 카메라 서버 실행 
+```
+cd final code 
+cd py_bt_ros
+python3 camera_server.py
+
+```
+# main.py 실행 
+
 ```
 python3 main.py
+
 ```
+# Rviz 인터페이스에서 2D Goal Pose를 사용한 목적지 설정
+```
+2D Goal Pose로 목적지 지정
+```
+### 수행완료 !!
+
 
 
