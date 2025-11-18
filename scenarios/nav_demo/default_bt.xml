@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+<BehaviorTree ID="MainTree">
+    <Sequence name="MissionSequence">
+        <SaveHomePose name="InitHome" topic_name="/amcl_pose"/>
+        
+        <WaitForGoalPose name="WaitForUserCommand" topic_name="/bt/goal_pose"/>
+        
+        <NavigateToKey name="MoveToGoal" bb_key_name="target_pose"/>
+        
+        <CaptureImageClient name="CaptureImage"/>
+        
+        <NavigateToKey name="ReturnHome" bb_key_name="home_pose"/>
+        
+        <ResetGoal name="ResetGoal"/>
+    </Sequence>
+</BehaviorTree>
+</root>
